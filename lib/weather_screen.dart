@@ -104,6 +104,16 @@ class _WeatherScreenState extends State<WeatherScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: Row(
+                        // mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.location_pin),
+                          Text(data['city']['name']),
+                        ],
+                      ),
+                    ),
                     SizedBox(
                       width: double.infinity,
                       child: Card(
@@ -189,7 +199,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                             img: hourlyForcast['weather'][0]['icon'].toString(),
                             // icon: Icons.cloud,
                             temperature:
-                                "${hourlyForcast['main']['temp'].toStringAsFixed(2)}°C",
+                                "${hourlyForcast['main']['temp'].round().toString()}°C",
                           );
                         },
                       ),
