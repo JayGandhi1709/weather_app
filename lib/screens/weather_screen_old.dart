@@ -1,11 +1,10 @@
 import 'dart:convert';
 import 'dart:ui';
-import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:weather_app/additional_information_item.dart';
-import 'package:weather_app/houlry_forecast_item.dart';
+import 'package:weather_app/widgets/additional_information_item.dart';
+import 'package:weather_app/widgets/houlry_forecast_item.dart';
 import 'package:weather_app/secrets.dart';
 
 class WeatherScreen extends StatefulWidget {
@@ -196,8 +195,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
 
                           return HourlyForecastItem(
                             time: DateFormat.j().format(time).toString(),
-                            img: hourlyForcast['weather'][0]['icon'].toString(),
-                            // icon: Icons.cloud,
+                            // img: hourlyForcast['weather'][0]['icon'].toString(),
+                            icon: Icons.cloud,
                             temperature:
                                 "${hourlyForcast['main']['temp'].round().toString()}°C",
                           );
